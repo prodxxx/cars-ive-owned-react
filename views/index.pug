@@ -1,0 +1,69 @@
+html
+  head
+  link(rel="stylesheet" href="/public/styles.css")
+  include partials/head
+  body  
+      h3 This is a list of cars I have owned. (yes, i've owned enough cars to warrant a list)  
+        br 
+      h3  Currently the database holds just the following information:
+      p 
+        ul
+          li id
+          li Make
+          li Model
+          li Year
+          li If it is a currently owned vehicle
+          li If I would repurchase this vehicle
+          li Manufacturer
+
+      h2 Using the API
+
+      h4 Getting A List of Cars By Manufacturer
+      p
+        ul
+          li GET http://localhost:1337/manufacturers
+            ul
+              li Provides a list of all the manufacturers in the database.
+              li 
+          li GET http://localhost:1337/manufacturers/"manufacturer"
+            ul
+              li Replace "manufacturer" with search term. Returns a list of all manufacturers containing the search criteria as part of their names with their respective models.
+
+      h4 Getting A List of Cars By Vehicle Model
+      p
+        ul
+          li GET http://localhost:1337/vehicleModels
+            ul
+              li Provides a list of all the manufacturers in the database.
+              li 
+          li GET http://localhost:1337/vehicleModels/"model name"
+            ul
+              li Replace "model name" with search term. Returns a list of all models containing the search criteria as part of their names with their respective models.     
+
+
+      h4 Getting A List of Cars Currently Owned
+      p
+        ul
+          li  GET https://localhost:1337/MyCars
+
+      h4 Getting A List of Cars I Would Buy Again
+      p
+        ul
+          li GET http://localhost:1337/MyCars/repurchase/"yes or no"
+            ul
+              li Use Yes or No to get a list of cars I would not would not repurchase
+
+      h4 Getting A List of Car Models I Have Owned by Year
+      p
+        ul
+          li GET http://localhost:1337/MyCars/year/"year"
+            ul
+              li Replace "year" With The Year You Would Like To Pull Preivously Owned Vehicles From
+      
+     
+      h4 Adding A Vehicle To The List
+      p
+        ul
+          li POST http://localhost:1337/MyCars { "vehicleModelId": "vehicle model ID from the vehileModels table", "year": "year manufcatured", "currentVehicle": "yes or no", "repurchase": "yes or no" }
+
+      
