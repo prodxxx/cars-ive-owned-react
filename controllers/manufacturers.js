@@ -15,16 +15,16 @@ export const getManufacturersByIdentifier = async (request, response) => {
     const { identifier } = request.params
 
     const foundManufacturer = await models.manufacturers.findAll({
-      attributes: ['id', 'name', 'createdAt', 'updatedAt'],
+      attributes: ['id', 'name'],
       where: {
         [models.Op.or]: [
           { id: identifier },
-          { name: { [models.Op.like]: `%${identifier}%` } },
+          //   { name: { [models.Op.like]: `%${identifier}%` } },
         ],
       },
       include: [{
         model: models.vehicleModels,
-        attributes: ['id', 'name', 'createdAt', 'updatedAt'],
+        attributes: ['id', 'name'],
       }],
     })
 

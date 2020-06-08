@@ -19,8 +19,8 @@ export const getVehicleModelsByIdentifier = async (request, response) => {
   try {
     const { identifier } = request.params
 
-    const foundVehicleModel = await models.vehicleModels.findAll({
-      attributes: ['id', 'name', 'createdAt', 'updatedAt'],
+    const foundVehicleModel = await models.vehicleModels.findOne({
+      attributes: ['id', 'name'],
       where: { name: { [models.Op.like]: `%${identifier}%` } },
       include: [{
         model: models.manufacturers,

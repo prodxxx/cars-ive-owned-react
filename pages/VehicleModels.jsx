@@ -14,11 +14,11 @@ export default ({ location }) => {
 
   useEffect(() => {
     async function pullData() {
-      const { id, details, vehiclesModels } = await retrieveManufacturers(location)
+      const { id, details, vehicleModels } = await retrieveManufacturers(location)
 
       setManufacturerId(id)
       setManufacturer(details)
-      setVehicleModelList(vehiclesModels)
+      setVehicleModelList(vehicleModels)
     }
 
     pullData()
