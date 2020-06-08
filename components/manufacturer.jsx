@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 
 const Manufacturer = styled.div`
-  font-size: 20px;
+  font-size: 24px;
   margin-bottom: 10px;
   text-align: center;
 `
